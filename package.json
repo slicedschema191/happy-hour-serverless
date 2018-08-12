@@ -11,7 +11,9 @@
     "serverless-dynamodb-local": "0.2.30",
     "serverless-offline": "3.25.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "middy": "0.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

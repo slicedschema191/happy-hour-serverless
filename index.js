@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 const AWS = require('aws-sdk');
+const middy = require('middy')
+const { cors } = require('middy/middlewares')
 
 
 const BEERS_TABLE = process.env.BEERS_TABLE;
@@ -137,4 +139,4 @@ app.delete('/api/beers/:id', function (req, res) {
   });
 });
 
-module.exports.handler = serverless(app);
+module.exports.handler = middy(serverless(app)).use(cors());
