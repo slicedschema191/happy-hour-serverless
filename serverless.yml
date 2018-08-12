@@ -125,42 +125,68 @@ functions:
       - http:
           method: get
           path: /api/requests/{proxy+}
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
   createREquest:
     handler: index.handler
     events:
       - http:
           method: post
           path: /api/requests
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
   getBeer:
     handler: index.handler
     events:
       - http:
           method: get
           path: /api/beers/{proxy+}
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
   createBeer:
     handler: index.handler
     events:
       - http:
           method: post
           path: /api/beers
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
   updateBeer:
     handler: index.handler
     events:
       - http:
           method: put
           path: /api/beers
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
+
   deleteBeer:
     handler: index.handler
     events:
       - http:
           method: delete
           path: /api/beers
-          cors: true
+          cors:
+            origin: '*'
+            headers: '*'
+            methods: '*'
+            allowCredentials: true
+
 plugins:
   - serverless-dynamodb-local
   - serverless-offline
